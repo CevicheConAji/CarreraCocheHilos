@@ -1,16 +1,30 @@
+
+import java.util.InputMismatchException;
+import java.util.LinkedList;
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
-        String nombre = "hola";
-        Coche c1 = new Coche("Piero");
-        Coche c2 = new Coche("Paco");
+        Scanner sc = new Scanner(System.in);
+        LinkedList<Coche> coches = new LinkedList<>();
+        System.out.println("¿Cuantas coches quieres que crear?");
+        int iteraciones = 0;
 
-        c1.start();
-        c2.start();
-        try{
-            c1.join();
-            c2.join();
-        }catch (Exception e){
-            System.out.println("Error "+e.getMessage());
+        iteraciones = sc.nextInt();
+
+        Coche coche = null;
+
+        for (int i = 0; i < iteraciones; i++) {
+            System.out.println("Ingrese el nombre del coche: ("+ (i+1) + ")");
+            coche = new Coche(sc.next());
+            coches.add(coche);
         }
+
+        for(Coche c : coches) {
+            c.start();
+        }
+
     }
+
+
 }
