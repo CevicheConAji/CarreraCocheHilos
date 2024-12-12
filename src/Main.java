@@ -6,7 +6,7 @@ public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         LinkedList<Coche> coches = new LinkedList<>();
-        System.out.println("¿Cuantas coches quieres que crear?");
+        System.out.println("¿Cuantas coches quieres crear?");
         int iteraciones = 0;
 
         iteraciones = sc.nextInt();
