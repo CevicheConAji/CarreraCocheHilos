@@ -16,15 +16,15 @@ public class Coche extends Thread {
     public void run() {
         Random r = new Random();
         for(int i = 0; i < 500; i++) {
-
             distancia += r.nextInt(100 - 0 )+100;
-            System.out.println(getNombre()+" ("+obtenerId() + ") "+" distancia: " + distancia);
             i = distancia;
 
+            if(distancia < 500){
+                System.out.println(getNombre()+" ("+obtenerId() + ") "+" distancia: " + distancia+"km");
+            }
+
             if(distancia >= 500) {
-                System.out.println("-----------------------------------------------------------------------");
-                System.out.println(getNombre()+" ("+obtenerId() + ") "+ " ha finzalizado la carrera "+getDistancia());
-                System.out.println("-----------------------------------------------------------------------");
+                System.out.println(getNombre()+" ("+obtenerId() + ") "+ " ha finzalizado la carrera "+getDistancia()+"km");
             }
 
             try{
